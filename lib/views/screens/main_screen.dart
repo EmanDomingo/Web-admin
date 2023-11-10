@@ -9,7 +9,6 @@ import 'package:rental_app_web_admin/views/screens/side_bar_screen/owners_screen
 import 'package:rental_app_web_admin/views/screens/side_bar_screen/products_screen.dart';
 import 'package:rental_app_web_admin/views/screens/side_bar_screen/upload_banner_screen.dart';
 import 'package:rental_app_web_admin/views/screens/side_bar_screen/user_screen.dart';
-import 'package:rental_app_web_admin/views/screens/side_bar_screen/withdrawal_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -46,12 +45,6 @@ class _MainScreenState extends State<MainScreen> {
       case OrderScreen.routeName:
       setState(() {
         _selectedItem = OrderScreen();
-      });
-
-      break;
-      case WithdrawalScreen.routeName:
-      setState(() {
-        _selectedItem = WithdrawalScreen();
       });
 
       break;
@@ -95,11 +88,6 @@ class _MainScreenState extends State<MainScreen> {
           title: 'Approved',
           icon: CupertinoIcons.heart,
           route: OrderScreen.routeName
-          ),
-          AdminMenuItem(
-          title: 'Withdrawal',
-          icon: CupertinoIcons.money_dollar,
-          route: WithdrawalScreen.routeName
           ),
           AdminMenuItem(
           title: 'Catogories',
