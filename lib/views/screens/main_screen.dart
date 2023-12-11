@@ -116,19 +116,21 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ),
 
-        footer: Container(
-          height: 50,
-          width: double.infinity,
-          color: Color.fromRGBO(55, 99, 150, 1),
-          child: const Center(
-            child: Text(
-              '@admin',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
+        // footer: ListTile(
+        //   onTap: () async {
+        //     await _auth.signOut().whenComplete(() {
+        //       Navigator.pushReplacement(context,
+        //         MaterialPageRoute(builder: (context) {
+        //           return AdminLogin();
+        //         }));
+        //       });
+        //     },
+        //   leading: Icon(Icons.logout),
+        //     title: Text('Logout',
+        //     style: TextStyle(
+        //     color: Color.fromRGBO(53, 61, 104, 1),
+        //   ),),
+        // ),
       ),
       body: _selectedItem);
   }
