@@ -38,6 +38,7 @@ class _AdminLoginState extends State<AdminLogin> {
       }
     }
   }
+  
 
   //   } else {
   //     setState(() {
@@ -107,7 +108,7 @@ class _AdminLoginState extends State<AdminLogin> {
                     ),
                     SizedBox(height: 15),
                     Padding(
-                      padding: const EdgeInsets.all(13.0),
+                      padding: EdgeInsets.only(left: 350, right: 350),
                       child: TextFormField(
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -130,8 +131,9 @@ class _AdminLoginState extends State<AdminLogin> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 15),
                     Padding(
-                      padding: const EdgeInsets.all(13.0),
+                      padding: EdgeInsets.only(left: 350, right: 350),
                       child: TextFormField(
                         obscureText: true,
                         validator: (value) {

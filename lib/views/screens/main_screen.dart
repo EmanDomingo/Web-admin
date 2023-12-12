@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:rental_app_web_admin/views/screens/side_bar_screen/categories_screen.dart';
-import 'package:rental_app_web_admin/views/screens/side_bar_screen/orders_screen.dart';
 import 'package:rental_app_web_admin/views/screens/side_bar_screen/owners_screen.dart';
 import 'package:rental_app_web_admin/views/screens/side_bar_screen/products_screen.dart';
 import 'package:rental_app_web_admin/views/screens/side_bar_screen/upload_banner_screen.dart';
@@ -41,11 +40,11 @@ class _MainScreenState extends State<MainScreen> {
         _selectedItem = ProductScreen();
       });
 
-      break;
-      case OrderScreen.routeName:
-      setState(() {
-        _selectedItem = OrderScreen();
-      });
+      // break;
+      // case OrderScreen.routeName:
+      // setState(() {
+      //   _selectedItem = OrderScreen();
+      // });
 
       break;
       case CategoriesScreen.routeName:
@@ -84,11 +83,11 @@ class _MainScreenState extends State<MainScreen> {
           icon: Icons.house,
           route: ProductScreen.routeName
           ),
-        AdminMenuItem(
-          title: 'Approved',
-          icon: CupertinoIcons.heart,
-          route: OrderScreen.routeName
-          ),
+        // AdminMenuItem(
+        //   title: 'Approved',
+        //   icon: CupertinoIcons.heart,
+        //   route: OrderScreen.routeName
+        //   ),
           AdminMenuItem(
           title: 'Catogories',
           icon: Icons.category,
@@ -103,7 +102,7 @@ class _MainScreenState extends State<MainScreen> {
         screenSlector(item);
       },
       header: Container(
-          height: 50,
+          height: 40,
           width: double.infinity,
           color: Color.fromRGBO(55, 99, 150, 1),
           child: const Center(

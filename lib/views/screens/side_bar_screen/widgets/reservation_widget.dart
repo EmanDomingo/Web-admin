@@ -55,7 +55,7 @@ class ReservationWidget extends StatelessWidget {
             reservationUserData['category'],
             style: TextStyle(
               fontWeight: FontWeight.bold),),),
-          reservationData(2, Text(
+          reservationData(1, Text(
             reservationUserData['productName'],
             style: TextStyle(
               fontWeight: FontWeight.bold),),),
@@ -71,7 +71,7 @@ class ReservationWidget extends StatelessWidget {
             reservationUserData['productPrice'].toStringAsFixed(2),
             style: TextStyle(
               fontWeight: FontWeight.bold),),),
-          reservationData(1,
+          reservationData(2,
           reservationUserData['approved'] == false
           ?ElevatedButton(onPressed: () async {
             await _firestore

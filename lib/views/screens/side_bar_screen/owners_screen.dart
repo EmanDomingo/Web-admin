@@ -56,11 +56,11 @@ class OwnerScreen extends StatelessWidget {
 
             Row(children: [
               _rowHeader('LOGO', 1),
-              _rowHeader('BUSSINESS NAME', 3),
-              _rowHeader('CITY', 2),
-              _rowHeader('STATE', 2),
+              _rowHeader('BUSSINESS NAME', 1),
+              _rowHeader('CITY', 1),
+              _rowHeader('STATE', 1),
+              _rowHeader('NUMBER', 1),
               _rowHeader('ACTION', 1),
-              _rowHeader('VIEW MORE', 1),
             ],
             ),
             OwnerWidget(),

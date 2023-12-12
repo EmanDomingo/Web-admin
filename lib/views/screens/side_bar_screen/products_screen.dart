@@ -57,11 +57,11 @@ class ProductScreen extends StatelessWidget {
 
             Row(children: [
               _rowHeader('CATEGORY', 1),
-              _rowHeader('NAME', 2),
+              _rowHeader('NAME', 1),
               _rowHeader('ADDRESS', 4),
-              _rowHeader('CONTACT NUMBER', 1),
+              _rowHeader('NUMBER', 1),
               _rowHeader('PRICE', 1),
-              _rowHeader('ACTION', 1),
+              _rowHeader('ACTION', 2),
               ],
             ),
             ReservationWidget(),

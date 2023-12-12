@@ -57,7 +57,7 @@ class UserWidget extends StatelessWidget {
           ),
           ),
 
-          buyerData(2, Text(
+          buyerData(1, Text(
             buyerUserData['fullName'],
             style: TextStyle(
               fontWeight: FontWeight.bold),),),

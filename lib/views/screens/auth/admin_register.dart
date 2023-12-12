@@ -82,10 +82,9 @@ class _AdminRegisterState extends State<AdminRegister> {
                     color: Colors.blue,
                   ),
                 ),
-
                 SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8.0),
+                  padding: EdgeInsets.only(left: 350, right: 350),
                   child: TextFormField(
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -103,9 +102,9 @@ class _AdminRegisterState extends State<AdminRegister> {
                     ),
                   ),
                 ),
-        
+                SizedBox(height: 15),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8.0),
+                  padding: EdgeInsets.only(left: 350, right: 350),
                   child: TextFormField(
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -123,9 +122,9 @@ class _AdminRegisterState extends State<AdminRegister> {
                     ),
                   ),
                 ),
-        
+                SizedBox(height: 15),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8.0),
+                  padding: EdgeInsets.only(left: 350, right: 350),
                   child: TextFormField(
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -143,9 +142,9 @@ class _AdminRegisterState extends State<AdminRegister> {
                     ),
                   ),
                 ),
-        
+                SizedBox(height: 15),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8.0),
+                  padding: EdgeInsets.only(left: 350, right: 350),
                   child: TextFormField(
                     obscureText: true,
                     validator: (value) {
@@ -176,7 +175,7 @@ class _AdminRegisterState extends State<AdminRegister> {
                       _adminsignUpUser();
                     },
                     child: Container(
-                    width: MediaQuery.of(context).size.width - 40,
+                    width: MediaQuery.of(context).size.width - 850,
                     height: 50,
                     decoration: BoxDecoration(
                       color: Colors.blue.shade500,

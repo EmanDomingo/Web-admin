@@ -58,16 +58,20 @@ class OwnerWidget extends StatelessWidget {
           ),
           ),
 
-          ownerData(3, Text(
+          ownerData(1, Text(
             ownerUserData['bussinessName'],
             style: TextStyle(
               fontWeight: FontWeight.bold),),),
-          ownerData(2, Text(
+          ownerData(1, Text(
             ownerUserData['cityValue'],
             style: TextStyle(
               fontWeight: FontWeight.bold),),),
-          ownerData(2, Text(
+          ownerData(1, Text(
             ownerUserData['stateValue'],
+            style: TextStyle(
+              fontWeight: FontWeight.bold),),),
+          ownerData(1, Text(
+            ownerUserData['phoneNumber'],
             style: TextStyle(
               fontWeight: FontWeight.bold),),),
           ownerData(1,
@@ -89,8 +93,6 @@ class OwnerWidget extends StatelessWidget {
             });
           },
           child: Text('Reject'),),),
-          ownerData(1, ElevatedButton(onPressed: () {},
-          child: Text('View More'),),),
 
                 ],
               ),

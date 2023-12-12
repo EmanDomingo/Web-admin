@@ -57,9 +57,9 @@ class UserScreen extends StatelessWidget {
 
             Row(children: [
               _rowHeader('IMAGE', 1),
-              _rowHeader('NAME', 2),
+              _rowHeader('NAME', 1),
               _rowHeader('ADDRESS', 4),
-              _rowHeader('CONTACT NUMBER', 1),
+              _rowHeader('NUMBER', 1),
               _rowHeader('EMAIL', 2),
               ],
             ),
