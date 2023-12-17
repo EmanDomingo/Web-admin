@@ -77,7 +77,7 @@ String? fileName ;
                 'Banners',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 36,
+                  fontSize: 28,
                 ),
               ),
             ),
@@ -92,8 +92,8 @@ String? fileName ;
                 child: Column(
                   children: [
                     Container(
-                      height: 140,
-                      width: 140,
+                      height: 100,
+                      width: 100,
                       decoration: BoxDecoration(
                         color: Colors.grey.shade300,
               
@@ -115,7 +115,7 @@ String? fileName ;
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 2,
-                        primary: Colors.blue.shade300),
+                        primary: Color.fromRGBO(75, 156, 248, 1),),
                       onPressed: (){
                         pickImage();
                       },
@@ -132,7 +132,7 @@ String? fileName ;
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 2,
-                  primary: Colors.blue.shade300),
+                  primary: Color.fromRGBO(75, 156, 248, 1),),
                 onPressed: (){
                   uploadToFireStore();
                 },
@@ -154,10 +154,10 @@ String? fileName ;
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 alignment: Alignment.topLeft,
-                child: Text("Upload Banners",
+                child: Text("Banners",
                 style: TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 26,
+                  fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

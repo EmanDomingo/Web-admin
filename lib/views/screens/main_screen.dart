@@ -70,16 +70,16 @@ class _MainScreenState extends State<MainScreen> {
       sideBar: SideBar(items: [
         AdminMenuItem(
           title: 'Owners',
-          icon: CupertinoIcons.person_3,
+          icon: CupertinoIcons.person_3_fill,
           route: OwnerScreen.routeName
           ),
         AdminMenuItem(
-          title: 'User',
+          title: 'Buyers',
           icon: Icons.person,
           route: UserScreen.routeName
           ),
           AdminMenuItem(
-          title: 'Reservation',
+          title: 'Properties',
           icon: Icons.house,
           route: ProductScreen.routeName
           ),
@@ -104,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
       header: Container(
           height: 40,
           width: double.infinity,
-          color: Color.fromRGBO(55, 99, 150, 1),
+          color: Color.fromRGBO(31, 116, 214, 1),
           child: const Center(
             child: Text(
               'Rental App Panel',

@@ -47,22 +47,22 @@ class UserScreen extends StatelessWidget {
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.all(10),
               child: const Text(
-                'Buyer',
+                'Buyers',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 36,
+                  fontSize: 28,
                 ),
               ),
             ),
 
-            Row(children: [
-              _rowHeader('IMAGE', 1),
-              _rowHeader('NAME', 1),
-              _rowHeader('ADDRESS', 4),
-              _rowHeader('NUMBER', 1),
-              _rowHeader('EMAIL', 2),
-              ],
-            ),
+            // Row(children: [
+            //   _rowHeader('IMAGE', 1),
+            //   _rowHeader('NAME', 1),
+            //   _rowHeader('ADDRESS', 4),
+            //   _rowHeader('NUMBER', 1),
+            //   _rowHeader('EMAIL', 2),
+            //   ],
+            // ),
             UserWidget(),
           ],
         ),

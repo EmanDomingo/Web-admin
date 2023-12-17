@@ -2,6 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:rental_app_web_admin/views/screens/encypt/customer_auth.dart';
 
 class UserWidget extends StatelessWidget {
   const UserWidget({super.key});
@@ -26,9 +27,18 @@ class UserWidget extends StatelessWidget {
     );
   }
 
+  String decryptPogi(String text) {
+      final authController = AuthController();
+      final decodedText = authController.decrypt(text);
+      return decodedText;
+    }
+
   @override
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> _buyersStream = FirebaseFirestore.instance.collection('buyers').snapshots();
+
+    final ScrollController _scrollController = ScrollController();
+    final ScrollController scrollController2 = ScrollController();
 
     return StreamBuilder<QuerySnapshot>(
       stream: _buyersStream,
@@ -41,42 +51,66 @@ class UserWidget extends StatelessWidget {
           return Text("Loading");
         }
 
-        return ListView.builder(
-          shrinkWrap: true,
-          itemCount: snapshot.data!.docs.length,
-          itemBuilder: (context, index){
+        return Container(
+            child: Scrollbar(
+              thumbVisibility: true,
+              thickness: 15.0,
+              controller: scrollController2,
+              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                controller: scrollController2,
+                  child:DataTable(
+                    headingRowColor:MaterialStateColor.resolveWith((states) => Color.fromRGBO(75, 156, 248, 1),),
+                  columnSpacing: 200.0,
+                  columns: [
+                    DataColumn(label: Text('Image',style: TextStyle(fontWeight: FontWeight.bold),)),
+                    DataColumn(label: Text('Name',style: TextStyle(fontWeight: FontWeight.bold),)),
+                    DataColumn(label: Text('Address',style: TextStyle(fontWeight: FontWeight.bold),)),
+                    DataColumn(label: Text('Phone Number',style: TextStyle(fontWeight: FontWeight.bold),)),
+                    DataColumn(label: Text('Email',style: TextStyle(fontWeight: FontWeight.bold),)),
+                  ],
+                  rows: snapshot.data!.docs.map((buyerUserData) {
+                    return DataRow(
+                      cells: [
+                        DataCell(
+                          Container(
+                            height: 40,
+                            width: 40,
+                            child: Image.network(
+                                decryptPogi(buyerUserData['profileImage'])),
+                          ),
+                        ),
+                        DataCell(
+                          Text(
+                            decryptPogi(buyerUserData['fullName']),
+                            style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        DataCell(
+                          Text(
+                            decryptPogi(buyerUserData['address']),
+                            style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        DataCell(
+                          Text(
+                            decryptPogi(buyerUserData['phoneNumber']),
+                            style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        DataCell(
+                          Text(
+                            decryptPogi(buyerUserData['email']),
+                            style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ],
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
 
-            final buyerUserData = snapshot.data!.docs[index];
-          return Container(
-      child: Row(
-        children: [
-          buyerData(1, Container(
-            height: 50,
-            width: 50,
-            child: Image.network(buyerUserData['profileImage']),
-          ),
-          ),
-
-          buyerData(1, Text(
-            buyerUserData['fullName'],
-            style: TextStyle(
-              fontWeight: FontWeight.bold),),),
-          buyerData(4, Text(
-            buyerUserData['address'],
-            style: TextStyle(
-              fontWeight: FontWeight.bold),),),
-          buyerData(1, Text(
-            buyerUserData['phoneNumber'],
-            style: TextStyle(
-              fontWeight: FontWeight.bold),),),
-          buyerData(2, Text(
-            buyerUserData['email'],
-            style: TextStyle(
-              fontWeight: FontWeight.bold),),),
-              ],
-              )
-            );
-          },
         );
       },
     );
